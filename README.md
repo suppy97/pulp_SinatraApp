@@ -1,4 +1,7 @@
 # Pulp_SinatraApp
+##  機能の説明
+ファイル名　機能概要にpgf形式で詳細画像がございます
+
 ## データベースの準備
 データベース名　CODEBASE_Sinatra
 ## テーブル
