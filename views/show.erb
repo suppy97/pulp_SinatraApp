@@ -1,0 +1,148 @@
+
+
+<head>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/main_animate.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="../css/superfish.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/flexslider.css">
+
+	<link rel="stylesheet" href="../css/main_style.css">
+
+	<!-- grid -->
+	<link rel="stylesheet" href="../css/foundation.min.css">
+	<!-- Font awesome -->
+	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
+
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!-- grid_hover -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/hold.css" />
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+
+
+</head>
+
+		<header id="fh5co-header" role="banner">
+			<div class="container text-center">
+				<div id="fh5co-logo">
+					<a href="/"><img src="../img/top.png"></a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/">Top</a></li>
+						<li><a href="/topic">Topic</a></li>
+						<li><a href="/home">Home</a></li>
+						<li><a href="/create">Create</a></li>
+						<li><a href="/logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- END #fh5co-header -->
+
+
+<div class="page-content">
+	<h2 id="save_message" style="color: #e44b60; text-align: center"><%= flash[:save] %></h2>
+
+	<h1 class="mb0"><%= @post['title'] %></h1>
+
+
+
+			<div class="meta"><span style="font-size: 20px"><%= @post['user_name'] %></span>
+				<br><span style="font-size: 20px"><%= @post['created_at'] %></span></div>
+			<p style="text-indent: 1em; font-size: 20px"><%= @post['description'] %></p>
+
+			<!-- save -->
+			<form action="/save/<%= @post['id'] %>" method="post">
+				<input type="hidden" name="_method" value="save">
+				<button type="submit" class="square_btn">
+					Save <i class="fas fa-thumbtack"></i>
+				</button>
+			</form>
+
+			<br>
+			<p class="text-center"><img src="<%= @post['image_path'] %>"></p>
+
+			<!-- Comment -->
+			<h2>Comment</h2>
+				<ul>
+					<% @comments.each do |comment| %>
+					<li style="font-size: 20px">
+						<%= comment['user_name'] %> :
+						<%= comment['body'] %>
+					</li>
+					<% end %>
+				</ul>
+			<br>
+			<form action="/show/<%= @post['id'] %>/comment" method="post">
+				<textarea class="form-control" name="comment" placeholder="Comment"></textarea>
+				<br>
+				<button type="submit" class="square_btn">Submit</button>
+
+			</form>
+			<!-- /Comment-->
+
+		</div>
+<br><br><br>
+
+
+
+<!-- 全ユーザーの投稿された画像 -->
+<!--<div class="container-fluid pt70 pb70">-->
+<!--	<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">-->
+
+		<%# @image.each do |image| %>
+<!--			<div class="fh5co-project masonry-brick">-->
+<!--				<a href="/show/<%#= image['id'] %>">-->
+<!--					<img src="<%#= image['image_path'] %>">-->
+<!--					<h2><%#= image['title'] %></h2>-->
+<!--				</a>-->
+<!--			</div>-->
+		<%# end %>
+
+
+<!--	</div>-->
+<!--</div>-->
+
+
+
+
+<style>
+	ul{
+		list-style: none;
+	}
+	.square_btn {
+		display: inline-block;
+		padding: 0.1em 1em;
+		text-decoration: none;
+		color: #e44b60;
+		border: solid 2px #e44b60;
+		border-radius: 3px;
+		transition: .4s;
+	}
+
+	.square_btn:hover {
+		background: #e44b60;
+		color: white;
+	}
+	p li{
+		font-size: 12px;
+	}
+
+</style>
+		
+

@@ -1,0 +1,189 @@
+
+
+<head>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../css/main_animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="../css/superfish.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/flexslider.css">
+
+	<link rel="stylesheet" href="../css/main_style.css">
+
+	<!-- grid -->
+	<link rel="stylesheet" href="../css/foundation.min.css">
+
+	<!-- Font awesome -->
+	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
+
+	<!-- Modernizr JS -->
+	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+		<header id="fh5co-header" role="banner">
+			<div class="container text-center">
+				<div id="fh5co-logo">
+					<a href="/"><img src="../img/top.png"></a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/">Top</a></li>
+						<li class="active"><a href="/home">Home</a></li>
+						<li><a href="/create">Create</a></li>
+						<li><a href="/logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- END #fh5co-header -->
+<br>
+<h2 id="delete_message" style="color: #e44b60; text-align: center"><%= flash[:deleted] %></h2>
+
+		<div class="page-content">
+			<h1 class="mb0"><%= @user['name'] %></h1>
+			<div class="meta"><span>Web Designer</span>, <span>Illustrator</span>, <span>Speaker</span></div>
+			<p class="text-center"></p>
+			<h2></h2>
+
+		</div>
+
+<div class="container-fluid pt70 pb70">
+	<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+		<% @home_user.each do |home| %>
+
+			<div class="fh5co-project masonry-brick">
+				<!-- 投稿の削除-->
+				<form action="/destroy/<%= home['id'] %>" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<button type="submit" class="square_btn">
+						<i class="fas fa-trash-alt"></i>
+					</button>
+
+
+
+				</form>
+
+				<a href="/show/<%= home['id'] %>">
+					<img src="<%= home['image_path'] %>">
+
+					<h2><%= home['title'] %></h2>
+					<h2><%= home['created_at'] %></h2>
+				</a>
+			</div>
+		<% end %>
+
+
+	</div>
+</div>
+
+<div class="page-content">
+	<h2>Save</h2>
+</div>
+	<div class="container-fluid pt70 pb70">
+		<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+			<% @save.each do |save| %>
+
+				<div class="fh5co-project masonry-brick">
+
+					<a href="/show/<%= save['post_id'] %>">
+						<img src="<%= save['image_path'] %>">
+
+						<h2><%= save['post_title'] %></h2>
+					</a>
+				</div>
+			<% end %>
+
+
+		</div>
+	</div>
+
+
+
+
+<!-- 投稿した記事 -->
+<div class="container-fluid pt70 pb70">
+
+	<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+		<% @home_user.each do |home| %>
+
+
+		<div class="grid">
+
+				<div class="fh5co-project masonry-brick">
+
+					<figure class="effect-zoe">
+						<a href="/show/<%= home['id'] %>">
+							<img src="<%= home['image_path'] %>">
+						</a>
+						<figcaption>
+							<h2><%= home['title'] %></h2>
+							<p class="icon-links">
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+			<% end %>
+
+
+		</div>
+	</div>
+</div>
+<!-- -->
+
+<br><br><br>
+<div class="page-content">
+	<h2>Save</h2>
+</div>
+<div class="container-fluid pt70 pb70">
+	<h2>Save</h2>
+		<div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+<% @save.each do |save| %>
+
+				<div class="grid">
+
+				<div class="fh5co-project masonry-brick">
+					<figure class="effect-zoe">
+
+					<a href="/show/<%= save['post_id'] %>">
+						<img src="<%= save['image_path'] %>">
+					</a>
+						<figcaption>
+						<h2><%= save['post_title'] %></h2>
+							<p class="icon-links">
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+<% end %>
+			</div>
+		</div>
+</div>
+
+
+<style>
+	.square_btn {
+		display: inline-block;
+		padding: 0.1em 1em;
+		text-decoration: none;
+		color: #e44b60;
+		border: solid 2px #e44b60;
+		border-radius: 3px;
+		transition: .4s;
+	}
+
+	.square_btn:hover {
+		background: #e44b60;
+		color: white;
+	}
+
+</style>

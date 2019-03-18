@@ -1,0 +1,89 @@
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/main_animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Superfish -->
+<link rel="stylesheet" href="css/superfish.css">
+<!-- Flexslider  -->
+<link rel="stylesheet" href="css/flexslider.css">
+
+<link rel="stylesheet" href="css/main_style.css">
+
+<!-- grid -->
+<link rel="stylesheet" href="css/foundation.min.css">
+
+
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Font awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+		<header id="fh5co-header" role="banner">
+			<div class="container text-center">
+				<div id="fh5co-logo">
+					<a href="/"><img src="img/Top.png" alt="Present Free HTML5 Bootstrap Template"></a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/">Top</a></li>
+						<li><a href="/topic">Topic</a></li>
+						<li><a href="/home">Home</a></li>
+						<li class="active"><a href="/create">Create</a></li>
+						<li><a href="/logout">Logout</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- END #fh5co-header -->
+
+		<div class="page-content">
+			<h1>Create</h1>
+			<main class="main-wrapper" id="container" style="height: 500px">
+				<div class="wrapper">
+					<form action="/create" method="post" enctype="multipart/form-data">
+						<p>Title</p>
+						<input type="text" class="form-control" name="title" placeholder="Title">
+						<p>Message</p>
+						<textarea class="form-control" name="description" placeholder="Message"></textarea>
+						<p>Image</p>
+						<input type="file" class="form-control" name="file">
+						<br>
+						<button type="submit" class="square_btn">Submit</button>
+						<hr>
+						<div class="preview" />
+					</form>
+				</div>
+			</main>
+
+		</div>
+
+		<style>
+			button{
+				text-align: center;
+				margin-left: 40%;
+			}
+			.square_btn {
+				display: inline-block;
+				padding: 0.3em 1em;
+				text-decoration: none;
+				color: #e44b60;
+				border: solid 2px #e44b60;
+				border-radius: 3px;
+				transition: .4s;
+			}
+
+			.square_btn:hover {
+				background: #e44b60;
+				color: white;
+			}
+
+		</style>

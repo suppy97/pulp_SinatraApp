@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt|PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/login.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/login_form.css">
+  	
+	<title>Scribble Transition Effect | CodyHouse</title>
+</head>
+<body class="scribble-transition">
+<main class="cd-main-content">
+	<div class="center">
+		<h1>Pulp</h1>
+
+		<a href="#modal-1" class="cd-btn cd-modal-trigger">Login</a>
+
+	</div>
+</main> <!-- .cd-main-content -->
+
+<div class="cd-modal" id="modal-1">
+	<div class="modal-content">
+		<h2>Login</h2>
+
+		<!--
+     LoginForm
+		 -->
+		<div class="login-page">
+			<div class="form">
+				<form class="register-form" method="post" action="/signup">
+					<input type="text" placeholder="name" name="name"/>
+					<input type="password" placeholder="password" name="password"/>
+					<input type="text" placeholder="email address" name="email"/>
+					<button>create</button>
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+				</form>
+				<form class="login-form" method="post" action="/login">
+					<input type="text" placeholder="name" name="name"/>
+					<input type="password" placeholder="password" name="password"/>
+					<button>Go</button>
+					<p class="message">Not registered? <a href="#">Create an account</a></p>
+				</form>
+			</div>
+		</div>
+
+		<!--
+				//LoginForm
+		-->
+
+	</div> <!-- .modal-content -->
+
+	<a href="#0" class="modal-close">Close</a>
+
+</div> <!-- .cd-modal -->
+
+<div class="cd-transition-layer" data-frame="38"> 
+	<div class="bg-layer"></div>
+</div> <!-- .cd-transition-layer -->
+
+<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+	if( !window.jQuery ) document.write('<script src="js/jquery-2.2.1-min.js"><\/script>');
+</script>
+<script src="js/login.js"></script> <!-- Resource jQuery -->
+
+</body>
+</html>
